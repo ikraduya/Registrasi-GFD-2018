@@ -16,23 +16,23 @@
     $noHP = $data->noHP;
 
     if ($nama == "admin" && $noPes == "reset") {
-      $query = "UPDATE tabelpeserta SET SUDAH = 0";
+      $query = "UPDATE tabelregistran SET SUDAH = 0";
       $result = mysqli_query($link, $query) or die('reset gagal');
-      $query = "UPDATE tabelpeserta SET nohp = ''";
+      $query = "UPDATE tabelregistran SET nohp = ''";
       $result = mysqli_query($link, $query) or die('reset gagal');
       echo ("RESET");
     } else {
       $noPes = substr($noPes, 2);
-      $query = "SELECT * FROM tabelpeserta WHERE nama = '$nama' AND noPes = '$noPes'";
+      $query = "SELECT * FROM tabelregistran WHERE nama = '$nama' AND noPes = '$noPes'";
       $result = mysqli_query($link, $query) or die('select query gagal');
       // echo($result);
       $row = mysqli_fetch_assoc($result);
       if ($row["id"] == '') {
         echo ("INVALID");
       } else if ($row["SUDAH"] == 0) {
-        $query = "UPDATE tabelpeserta SET SUDAH = 1 WHERE noPes = '$noPes'";
+        $query = "UPDATE tabelregistran SET SUDAH = 1 WHERE noPes = '$noPes'";
         $result = mysqli_query($link, $query) or die('update query gagal');
-        $query = "UPDATE tabelpeserta SET nohp = '$noHP' WHERE noPes = '$noPes'";
+        $query = "UPDATE tabelregistran SET nohp = '$noHP' WHERE noPes = '$noPes'";
         $result = mysqli_query($link, $query) or die('update query gagal');
         echo ($row["nama"]);
       } else if ($row["SUDAH"] == 1){
