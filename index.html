@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html ng-app="registApp">
+  <head>
+    <title> Registrasi Ulang Ganesha Fun Day </title>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="-1">
+    <script src="js/node_modules/angular/angular.js"></script>
+    <script src="js/myjs.js"></script>
+  	<script src="js/node_modules/angular-aria/angular-aria.js"></script>
+    <script src="js/node_modules/angular-animate/angular-animate.js"></script>
+    <script src="js/node_modules/angular-material/angular-material.js"></script>
+    <link rel="stylesheet" href="js/node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  </head>
+
+  <body>
+    <div class="loginBox">
+      <img src="/assets/img/logo.jpg" class="user">
+      <h2 class="titel">Registrasi Ulang Ganesha Fun Day</h2>
+      <div ng-controller="loginCont">
+        <form>
+          <p>Nama</p>
+          <input type="text" name="" placeholder="Input Nama" ng-model="formLogin.nama" required="" />
+          <p>Nomor Peserta</p>
+          <input type="text" name="" placeholder="Input Nomor Peserta" ng-model="formLogin.noPes" required="" />
+          <p>Nomor HP</p>
+          <input type="text" name="" placeholder="Input Nomor HP" ng-model="formLogin.noHP" required="" />
+          <input type="submit" name="" value="Masuk" ng-click="loginClick($event)">
+          <p class="message" ng-bind="alertText" style="color:#EEB28E;text-align:center;"></p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
